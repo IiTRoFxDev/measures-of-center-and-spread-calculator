@@ -1,4 +1,4 @@
-class measures_of_center_and_spread :
+class measures_of_center :
     def __init__(self , numbers=[]):
         self.numbers = numbers
         print("coded by Eyad. (iitrofxdev)")
@@ -13,7 +13,7 @@ class measures_of_center_and_spread :
         first_number = int((len(self.numbers)+1)/ 2)-1
         if (len(self.numbers)+1) % 2:
            return {sum(self.numbers[first_number:first_number+2]) / 2}
-        return {self.numbers[first_number]}
+        return self.numbers[first_number]
     def mode(self):
         frequency = {}
         for i in self.numbers:
@@ -33,9 +33,9 @@ class measures_of_center_and_spread :
         for item in self.numbers:
             sigma+=((item - x_dash)**2)
         return [((sigma / (len(self.numbers)-1))**0.5) , ((sigma / (len(self.numbers)))**0.5)]
-data = measures_of_center_and_spread()
+data = measures_of_center()
 data.numbers = [int(i)  for i in list(input().split(",")) if i !=" "]
-print(data.mean())
-print(data.median())
-print(data.mode())
-print(data.standered_deviation())
+print(f"mean => {data.mean()}")
+print(f"median => {data.median()}")
+print(f"mode => {data.mode()}")
+print(f"Population standard deviation => {(data.standered_deviation()[0])} , Sample standard deviation => {(data.standered_deviation()[1])}")
