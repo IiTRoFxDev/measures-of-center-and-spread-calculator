@@ -26,7 +26,7 @@ class measures_of_center :
         for key , value in frequency.items():
             if frequency[key] == the_value:
                 end.append(key)
-        if len(end) == len(self.numbers):
+        if len(list(set(frequency.values()))) == 1 and len(end) != 1:
             return "There is no mod"
         return end
     def standered_deviation(self):
