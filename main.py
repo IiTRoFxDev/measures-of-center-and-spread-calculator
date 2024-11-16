@@ -12,7 +12,7 @@ class measures_of_center :
             raise "there is not enough numbers in the data"
         first_number = int((len(self.numbers)+1)/ 2)-1
         if (len(self.numbers)+1) % 2:
-           return {sum(self.numbers[first_number:first_number+2]) / 2}
+           return sum(self.numbers[first_number:first_number+2]) / 2
         return self.numbers[first_number]
     def mode(self):
         frequency = {}
